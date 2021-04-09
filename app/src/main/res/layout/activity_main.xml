@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.menuprincipal.MainActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Inflables Feroz"
+                android:textColor="@color/color_on_primary"
+                android:textAlignment="inherit"
+                android:textStyle="bold"
+                android:textSize="32dp"
+                android:layout_marginStart="@dimen/padding_default_16"
+                />
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="@dimen/padding_default_16"
+                android:layout_marginStart="@dimen/padding_default_16"
+                android:layout_marginEnd="@dimen/padding_default_16"
+                android:background="@drawable/card_border_titulo_inicio"
+                >
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="@dimen/padding_default_16"
+                            android:layout_marginStart="@dimen/padding_default_16"
+                            android:layout_marginEnd="@dimen/padding_default_16"
+                            android:background="@drawable/card_border_titulo_inicio"
+                            android:orientation="vertical"
+                            >
+
+
+
+                            <!--<ImageView
+                                android:id="@+id/imgFotoMenuInflables"
+                                android:layout_width="@dimen/img_item_size"
+                                android:layout_height="@dimen/img_item_size"
+                                android:src="@mipmap/ic_launcher_round"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintStart_toEndOf="@id/decoracionInicial"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />-->
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgFotoMenuInflables"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="@dimen/common_padding_min"
+                                android:layout_marginStart="@dimen/common_padding_min"
+                                android:layout_marginEnd="@dimen/common_padding_min"
+                                android:layout_marginBottom="@dimen/common_padding_min"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+
+
+
+                            <TextView
+                                android:id="@+id/tvTituloInflables"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_field_menu_inflables"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_on_primary"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="@dimen/padding_default_16"
+                                app:layout_constraintStart_toEndOf="@id/imgFotoMenuInflables"
+                                app:layout_constraintEnd_toStartOf="@id/imgDecoration"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgDecoration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_flecha_siguiente"
+                                android:layout_marginEnd="@dimen/padding_default_16"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="@dimen/padding_default_16"
+                            android:layout_marginStart="@dimen/padding_default_16"
+                            android:layout_marginEnd="@dimen/padding_default_16"
+                            android:background="@drawable/card_border_titulo_inicio"
+                            android:orientation="vertical"
+
+                            >
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgFotoMenuInflables1"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:layout_marginTop="@dimen/common_padding_min"
+                                android:layout_marginStart="@dimen/common_padding_min"
+                                android:layout_marginEnd="@dimen/common_padding_min"
+                                android:layout_marginBottom="@dimen/common_padding_min"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+
+
+
+                            <TextView
+                                android:id="@+id/tvTitulo1Inflables"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/txt_field_menu_contactos"
+
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/color_on_primary"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="@dimen/padding_default_16"
+                                app:layout_constraintStart_toEndOf="@id/imgFotoMenuInflables1"
+                                app:layout_constraintEnd_toStartOf="@id/imgDecoration1"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgDecoration1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_flecha_siguiente"
+                                android:layout_marginEnd="@dimen/padding_default_16"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+</RelativeLayout>
