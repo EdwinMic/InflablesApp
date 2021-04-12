@@ -3,4 +3,13 @@
     <string name="tn_photo">tnPhoto</string>
     <string name="txt_field_menu_inflables">Inflables</string>
     <string name="txt_field_menu_contactos">Contactos</string>
+    <string name="txt_field_menu_ubicanos">Ubicanos</string>
+    <string name="txt_field_menu_nuestras_experiencias">Nuestras Experiencias</string>
+    <string name="txt_field_menu_Buzon">Buzon</string>
+    <string name="txt_field_menu_administrar">Administrar</string>
+    <string name="txt_field_menu_add_inflables">Agregar Inflables</string>
+    <string name="txt_field_menu_add_contactos">Agregar Contactos</string>
+    <string name="txt_field_menu_add_nuestras_experiencias">Agregar Nuevas Experiencias</string>
+    <string name="txt_field_menu_add_Buzon">Agregar Buzon</string>
+    <string name="txt_field_seleccion_inflable_list">Selecciona un Inflable</string>
 </resources>

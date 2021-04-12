@@ -3,4 +3,5 @@
     <dimen name="padding_default_16">16dp</dimen>
     <dimen name="common_padding_min">8dp</dimen>
     <dimen name="img_item_size">88dp</dimen>
+    <dimen name="item_padding_32">32dp</dimen>
 </resources>

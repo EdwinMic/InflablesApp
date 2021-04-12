@@ -5,19 +5,22 @@
     <!--<gradient android:startColor="@color/color_surface"
         android:endColor="@color/color_on_error"
         android:angle="90"/>-->
-  <!--  <gradient
+    <gradient
         android:angle="180"
         android:endColor="#ED064F"
         android:startColor="#DD138D"
-        />-->
+        />
 
     <corners
+        android:radius="10dp"
+        />
+<!--    <corners
         android:bottomLeftRadius="15dp"
         android:topLeftRadius="15dp"
         android:bottomRightRadius="15dp"
-        android:topRightRadius="15dp" />
+        android:topRightRadius="15dp" />-->
 
-    <stroke android:width="3dp"
-        android:color="#1C4ECD" />
+    <!--<stroke android:width="3dp"
+        android:color="#1C4ECD" />-->
 
 </shape>

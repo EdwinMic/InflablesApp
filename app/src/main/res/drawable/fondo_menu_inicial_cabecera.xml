@@ -5,15 +5,25 @@
         android:endColor="#ED064F"
         android:startColor="#DD138D"
         />
+    <!--<corners
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"/>-->
+    <gradient
+        android:angle="180"
+        android:endColor="#FF6448FE"
+        android:startColor="#FF5FC6FF"
+        />
+
+    <corners
+        android:bottomRightRadius="20dp"
+        android:bottomLeftRadius="20dp" />
 
     <!--<gradient
         android:angle="180"
         android:endColor="#FF63FFD5"
         android:startColor="#FF61A3FE"
         />-->
-    <corners
-        android:bottomLeftRadius="10dp"
-        android:bottomRightRadius="10dp"/>
+
     <!--<padding
         android:left="5dp"
         android:top="5dp"

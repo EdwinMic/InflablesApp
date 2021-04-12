@@ -4,9 +4,13 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>-->
 
-    <color name="color_primary">#ff1744</color>
+    <color name="color_primary">#13CCDD</color>
+
+    <color name="color_primary_variant">#1793FF</color>
+
+    <!--<color name="color_primary">#ff1744</color>-->
     <!--<color name="color_primary_variant">#c4001d</color>-->
-    <color name="color_primary_variant">#DD138D</color>
+    <!--<color name="color_primary_variant">#DD138D</color>-->
 
     <color name="color_secondary">#37474f</color>
     <color name="color_secondary_variant">#102027</color>

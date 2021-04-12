@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.menuprincipal.MainActivity">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/fondo_menu_inicial_cabecera"
-        >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Inflables Feroz"
-            android:textColor="@color/color_on_secondary"
-            android:textAlignment="inherit"
-            android:textStyle="bold"
-            android:textSize="32dp"
-            android:layout_marginStart="@dimen/padding_default_16"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+    tools:context=".ui.menuprincipal.administrar.menu.MenuAdministracionActivity">
 
 
     <androidx.core.widget.NestedScrollView
@@ -35,6 +12,9 @@
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/padding_default_16"
         android:layout_marginBottom="@dimen/padding_default_16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         >
 
         <LinearLayout
@@ -43,7 +23,7 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/opcionInflables"
+                android:id="@+id/opcionAddInflables"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/common_padding_min"
@@ -73,7 +53,7 @@
                     android:id="@+id/tvTituloInflables"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_field_menu_inflables"
+                    android:text="@string/txt_field_menu_add_inflables"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="@color/color_on_secondary"
@@ -99,7 +79,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/opcionContactos"
+                android:id="@+id/opcionAddContactos"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/padding_default_16"
@@ -126,7 +106,7 @@
                     android:id="@+id/tvTituloContactos"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_field_menu_contactos"
+                    android:text="@string/txt_field_menu_add_contactos"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="@color/color_on_secondary"
@@ -150,60 +130,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/opcionUbicanos"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="@dimen/padding_default_16"
-                android:layout_marginStart="@dimen/padding_default_16"
-                android:layout_marginEnd="@dimen/padding_default_16"
-                android:background="@drawable/colores_gradientes_pink"
-                android:orientation="vertical"
 
-                >
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgFotoMenuUbicanos"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    />
-
-                <TextView
-                    android:id="@+id/tvTituloUbicanos"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txt_field_menu_ubicanos"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/color_on_secondary"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="@dimen/padding_default_16"
-                    app:layout_constraintStart_toEndOf="@id/imgFotoMenuUbicanos"
-                    app:layout_constraintEnd_toStartOf="@id/imgDecorationUbicanos"
-                    app:layout_constraintTop_toTopOf="parent"
-
-                    />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgDecorationUbicanos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_flecha_siguiente"
-                    android:layout_marginEnd="@dimen/padding_default_16"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/opcionExperiencias"
+                android:id="@+id/opcionAddExperiencias"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/padding_default_16"
@@ -230,7 +160,7 @@
                     android:id="@+id/tvTituloExperiencias"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_field_menu_nuestras_experiencias"
+                    android:text="@string/txt_field_menu_add_nuestras_experiencias"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="@color/color_on_secondary"
@@ -256,7 +186,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/opcionBuzon"
+                android:id="@+id/opcionAddBuzon"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/padding_default_16"
@@ -283,7 +213,7 @@
                     android:id="@+id/tvTituloBuzon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_field_menu_Buzon"
+                    android:text="@string/txt_field_menu_add_Buzon"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="@color/color_on_secondary"
@@ -308,62 +238,13 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/opcionAdministrar"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="@dimen/padding_default_16"
-                android:layout_marginStart="@dimen/padding_default_16"
-                android:layout_marginEnd="@dimen/padding_default_16"
-                android:background="@drawable/colores_gradientes_skynight"
-                android:orientation="vertical"
 
-                >
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgFotoMenuAdministrar"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    />
-
-                <TextView
-                    android:id="@+id/tvTituloAdministrar"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/txt_field_menu_administrar"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/color_on_secondary"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="@dimen/padding_default_16"
-                    app:layout_constraintStart_toEndOf="@id/imgFotoMenuAdministrar"
-                    app:layout_constraintEnd_toStartOf="@id/imgDecorationAdministrar"
-                    app:layout_constraintTop_toTopOf="parent"
-
-                    />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgDecorationAdministrar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_flecha_siguiente"
-                    android:layout_marginEnd="@dimen/padding_default_16"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
 
     </androidx.core.widget.NestedScrollView>
 
-</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

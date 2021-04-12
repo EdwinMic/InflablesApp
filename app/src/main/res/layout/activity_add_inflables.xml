@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity"
+    android:id="@+id/containerDetalle">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/fondo_appbars"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/fondo_appbars"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imgTomada"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_image"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="185dp"
+            android:layout_marginStart="@dimen/item_padding_32"
+            android:layout_marginBottom="@dimen/padding_default_16"
+            android:background="@color/cardview_light_background"
+            >
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:paddingBottom="64dp"
+                android:clipToPadding="false"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/mtbtnPhoto"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:text="Foto"
+                            android:layout_marginTop="@dimen/padding_default_16"
+                            android:layout_marginStart="@dimen/padding_default_16"
+                            android:layout_marginEnd="@dimen/padding_default_16"
+                            android:enabled="true"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:icon="@drawable/ic_camera"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            />
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/mtbtnGaleria"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:text="Galeria"
+                            android:layout_marginEnd="@dimen/padding_default_16"
+                            android:layout_marginTop="@dimen/padding_default_16"
+                            app:icon="@drawable/ic_image_search"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilperfilUserAddempleado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_field_seleccion_inflable_list"
+                        android:layout_marginTop="@dimen/item_padding_32"
+                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                        style="@style/MyStyleAutocomplete"
+                        >
+
+                        <AutoCompleteTextView
+                            android:id="@+id/actvPerfilUsuarioEmpleado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                   <!-- <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDirectorDetalleEmpresa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_padding_32"
+                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                        style="@style/MyTheme.AddData.TextInputLayout"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDirectorDetalleEmpresa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Director"
+                            android:enabled="false"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"
+                            android:nextFocusForward="@id/tilTelefonoDetalleEmpresa"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilTelefonoDetalleEmpresa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_padding_32"
+                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                        style="@style/MyTheme.AddData.TextInputLayout"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTelefonoDetalleEmpresa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Telefono"
+                            android:enabled="false"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"
+                            android:nextFocusForward="@id/tilDireccionDetalleEmpresa"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDireccionDetalleEmpresa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_padding_32"
+                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                        style="@style/MyTheme.AddData.TextInputLayout"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDireccionDetalleEmpresa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Direccion"
+                            android:enabled="false"
+                            android:inputType="textUri"
+                            android:imeOptions="actionNone"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>-->
+
+
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabDetalleEmpresas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/padding_default_16"
+        android:src="@drawable/ic_flecha_siguiente"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity">
+</androidx.constraintlayout.widget.ConstraintLayout>-->

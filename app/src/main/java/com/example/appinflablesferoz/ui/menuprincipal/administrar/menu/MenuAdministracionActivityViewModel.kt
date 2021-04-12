@@ -1,11 +1,10 @@
-package com.example.appinflablesferoz.ui.menuprincipal
+package com.example.appinflablesferoz.ui.menuprincipal.administrar.menu
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainActivityViewModel(): ViewModel(){
-
+class MenuAdministracionActivityViewModel(): ViewModel() {
 
     private val _urlImagenTituloInflable = MutableLiveData<String>().apply {
         value = "https://firebasestorage.googleapis.com/v0/b/inflablesferoz.appspot.com/o/ImagenesPredeterminadas%2Fcocodrilo_menu.jpg?alt=media&token=bec618e4-420b-4a80-914b-134e55052b36"
