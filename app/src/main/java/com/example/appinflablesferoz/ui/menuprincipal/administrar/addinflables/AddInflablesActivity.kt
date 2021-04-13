@@ -10,21 +10,25 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import android.widget.ArrayAdapter
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.appinflablesferoz.R
+import com.example.appinflablesferoz.models.Inflables
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_add_inflables.*
 import java.io.File
@@ -34,7 +38,9 @@ import java.util.*
 
 class AddInflablesActivity : AppCompatActivity() {
 
-    //Variables Camaras/Galeria
+    //ViewModel
+    lateinit var addInflablesActivityViewModel: AddInflablesActivityViewModel
+
 
     //Variables Camaras/Galeria
     private val RP_CAMERA = 121
@@ -47,22 +53,37 @@ class AddInflablesActivity : AppCompatActivity() {
     val REQUEST_IMAGE_CAPTURE = 1
     private var mPhotoSelectedUri: Uri? = null
 
-    private val mStorageReference: StorageReference? = null
-    private val PATH_PROFILE = "Appbitacoras"
-    private val mDataBaseReference: DatabaseReference? = null
+    private var mStorageReference: StorageReference? = null
+    private val PATH_PROFILE = "Inflables"
+    private var mDataBaseStorageReference: DatabaseReference? = null
     private val PATH_PHOTO_URL = "photoUrl"
     var banderaFoto = false
 
-    //Photo DocGoogle
+    //Firebase REaltime
+    //private lateinit var database: DatabaseReference
+    var firebaseDatabase: FirebaseDatabase? = null
+    var databaseReference: DatabaseReference? = null
+
+    //Model
+    var mAddInflables: Inflables? = Inflables()
+    var id = UUID.randomUUID().toString()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_inflables)
 
-        val btnPhoto = findViewById<MaterialButton>(R.id.mtbtnPhoto) as MaterialButton
+        addInflablesActivityViewModel = ViewModelProvider(this).get(AddInflablesActivityViewModel::class.java)
+
+        val btnPhoto = findViewById<MaterialButton>(R.id.mtbtnPhoto)
         val btnGallery = findViewById<MaterialButton>(R.id.mtbtnGaleria)
 
-        iniciarListasFB()
+        etAddNombreInflable.setText("Castillo Cocodrilo")
+        etMedidas.setText("6 * 5 Mts")
+        etAddPrecio.setText("750")
+        etAddDescripcion.setText("Encantador inflable para niños de 1 año en adelante")
+
+        iniciarFirebase()
+
 
         btnPhoto.setOnClickListener {
             Toast.makeText(this,"Hola", Toast.LENGTH_LONG).show()
@@ -74,20 +95,122 @@ class AddInflablesActivity : AppCompatActivity() {
             checkPermissionToApp(Manifest.permission.READ_EXTERNAL_STORAGE,RP_STORAGE)
         }
 
+
+        fabAddInflables.setOnClickListener(View.OnClickListener {
+            if(validarCampos()){
+                guardarImagen()
+            }
+        })
     }
 
-    fun iniciarListasFB() {
-        val listPerfiles = arrayOf(
-            "Castillo Cocodrilo",
-            "Escaladora",
-            "Catillo Aventura",
-            "Castillo Woody"
+    //iniciar firebase
+    private fun iniciarFirebase(){
+
+        FirebaseApp.initializeApp(this)
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase!!.reference
+
+
+        mStorageReference = FirebaseStorage.getInstance().reference
+        mDataBaseStorageReference = firebaseDatabase!!.reference
+
+    }
+
+    //AddImage
+    private fun guardarImagen() {
+
+        try {
+            val profileReference =
+                mStorageReference!!.child(PATH_PROFILE)
+
+            //Nombre de la imagen
+            val photoReference =profileReference.child(id)
+            photoReference.putFile(mPhotoSelectedUri!!)
+                .addOnCompleteListener {
+                    //progressBar.setVisibility(View.GONE);
+                }
+                .addOnSuccessListener { taskSnapshot ->
+                    //Snackbar.make(findViewById(android.R.id.content),"Registro guardado", Snackbar.LENGTH_LONG).show();
+                    //Toast.makeText(AddRegistroActivity.this, "Imagen cargada", Toast.LENGTH_SHORT).show();
+                    taskSnapshot.storage.downloadUrl
+                        .addOnSuccessListener { uri ->
+                            saveOrEdit(uri)
+                            //btnDelete.setVisibility(View.VISIBLE);
+                            //mTextMessage.setText(R.string.main_message_done);
+                        }
+                }
+                .addOnFailureListener {
+                    //Snackbar.make(container, R.string.main_message_upload_error, Snackbar.LENGTH_LONG).show();
+                }
+        } catch (e: java.lang.Exception) {
+            Snackbar.make(containerAddInflables,R.string.main_message_add_image,Snackbar.LENGTH_LONG).show()
+        }
+
+    }
+
+    //AddData RealtimeDatabase
+    private fun saveOrEdit(uri: Uri?) {
+        val precio = Integer.valueOf(etAddPrecio.text.toString())
+        val mAddInflables = Inflables(
+            id,
+            etAddNombreInflable.text.toString(),
+            etMedidas.text.toString(),
+            precio,
+            "5512365197",
+            etAddDescripcion.text.toString(),
+            uri.toString()
         )
-        val adapterPErfiles: ArrayAdapter<*> = ArrayAdapter(this,R.layout.item_menu_dropdown,listPerfiles)
 
-        actvPerfilUsuarioEmpleado.setAdapter(adapterPErfiles)
+        databaseReference = firebaseDatabase!!.reference
+            .child("Inflables")
+            .child(id)
 
+        databaseReference!!.setValue(mAddInflables).addOnSuccessListener {
+            Snackbar.make(containerAddInflables,"Datos registrados",Snackbar.LENGTH_LONG).show()
+            super.onBackPressed()
+        }
     }
+
+    private fun validarCampos(): Boolean {
+        var isValid = true
+
+        if (etAddNombreInflable.text.toString().trim().isNotEmpty()) {
+            tilAddNombreInflable.setError(null)
+        } else {
+            tilAddNombreInflable.setError(getString(R.string.common_validate_field_required))
+            etAddNombreInflable.requestFocus()
+            isValid = false
+
+        }
+        if (etMedidas.text.toString().trim().isNotEmpty()) {
+            tilAddMedidas.setError(null)
+        } else {
+            tilAddMedidas.setError(getString(R.string.common_validate_field_required))
+            etMedidas.requestFocus()
+            isValid = false
+        }
+
+        if (etAddPrecio.text.toString().trim().isNotEmpty()) {
+            tilAddPrecio.setError(null)
+        } else {
+            tilAddPrecio.setError(getString(R.string.common_validate_field_required))
+            etAddPrecio.requestFocus()
+            isValid = false
+
+        }
+
+        if (etAddDescripcion.text.toString().trim().isNotEmpty()) {
+            tilAddDescripcion.setError(null)
+        } else {
+            tilAddDescripcion.setError(getString(R.string.common_validate_field_required))
+            tilAddDescripcion.requestFocus()
+            isValid = false
+
+        }
+
+        return isValid
+    }
+
     private fun checkPermissionToApp(permisionStr: String,requestPermision: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this,permisionStr) != PackageManager.PERMISSION_GRANTED) {
@@ -126,7 +249,6 @@ class AddInflablesActivity : AppCompatActivity() {
         }*/
     }
 
-
     private fun createImageFile(): File? {
         val timeStamp =
             SimpleDateFormat("dd-MM-yyyy_HHmmss", Locale.ROOT)
@@ -142,7 +264,6 @@ class AddInflablesActivity : AppCompatActivity() {
         }
         return image
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -211,3 +332,4 @@ class AddInflablesActivity : AppCompatActivity() {
     }
 
 }
+

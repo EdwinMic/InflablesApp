@@ -2,12 +2,14 @@ package com.example.appinflablesferoz.ui.menuprincipal
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.appinflablesferoz.R
 import com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.MenuAdministracionActivity
+import com.example.appinflablesferoz.ui.menuprincipal.inflables.InflablesActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,6 +31,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intento)
         }
 
+        opcionInflables.setOnClickListener(View.OnClickListener {
+            val intento = Intent(this, InflablesActivity::class.java)
+            startActivity(intento)
+        })
 
         initUI()
     }

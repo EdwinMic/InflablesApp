@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/padding_default_16"
+    android:layout_marginEnd="@dimen/padding_default_16"
+    android:layout_marginTop="@dimen/padding_default_16"
+    android:layout_marginBottom="@dimen/padding_default_16"
+    >-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_default_16"
+        android:layout_marginEnd="@dimen/padding_default_16"
+        android:layout_marginTop="@dimen/padding_default_16"
+        android:layout_marginBottom="@dimen/padding_default_16"
+        android:background="@drawable/colores_gradientes_sky"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgCircle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/padding_default_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_cloud"
+            />
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8sp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="Titulo"
+            android:textColor="@color/color_surface"
+            android:layout_marginTop="@dimen/padding_default_16"
+            app:layout_constraintTop_toBottomOf="@id/imgCircle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/txtMedidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medidas"
+            android:textSize="@dimen/padding_default_16"
+            android:textColor="@color/color_surface"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="@dimen/padding_default_16"
+            android:layout_marginEnd="@dimen/padding_default_16"
+            android:layout_marginTop="@dimen/common_padding_min"
+            app:layout_constraintTop_toBottomOf="@id/txtTitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:id="@+id/txtPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:textSize="@dimen/padding_default_16"
+            android:textColor="@color/color_surface"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="@dimen/padding_default_16"
+            android:layout_marginEnd="@dimen/padding_default_16"
+            android:layout_marginTop="@dimen/common_padding_min"
+            app:layout_constraintTop_toBottomOf="@id/txtMedidas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripcion"
+            android:textSize="@dimen/padding_default_16"
+            android:textColor="@color/color_surface"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="@dimen/padding_default_16"
+            android:layout_marginEnd="@dimen/padding_default_16"
+            android:layout_marginTop="@dimen/common_padding_min"
+            app:layout_constraintTop_toBottomOf="@id/txtPrecio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/padding_default_16"
+            android:paddingBottom="@dimen/padding_default_16"
+            app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btnApartar"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/colores_gradientes_fire"
+                android:layout_marginEnd="@dimen/common_padding_min"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apartame"
+                    android:textColor="@color/color_surface"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/padding_default_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnCall"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_flecha_siguiente"
+                android:layout_marginEnd="@dimen/common_padding_min"
+                />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnWhats"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/common_google_signin_btn_text_light_default"
+        android:layout_marginTop="16dp"
+        android:paddingTop="8dp"
+        />-->
+
+<!--
+</com.google.android.material.card.MaterialCardView>-->

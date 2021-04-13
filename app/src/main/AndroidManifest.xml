@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.appinflablesferoz">
-
-    <!--<uses-permission android:name="android.permission.INTERNET" />-->
-
+    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
     <application
         android:allowBackup="true"
@@ -18,15 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Base.MyTheme">
-        <activity android:name=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity">
-
-        </activity>
+        <activity android:name=".ui.menuprincipal.inflables.InflablesActivity"></activity>
+        <activity android:name=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity"></activity>
         <activity android:name=".ui.menuprincipal.administrar.addnuevasexperiencias.AddNuevasExperienciasActivity" />
         <activity android:name=".ui.menuprincipal.administrar.menu.MenuAdministracionActivity" />
         <activity android:name=".ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasActivity" />
         <activity android:name=".ui.menuprincipal.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -40,7 +38,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>

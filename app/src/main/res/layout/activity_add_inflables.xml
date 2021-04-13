@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity"
-    android:id="@+id/containerDetalle">
+    android:id="@+id/containerAddInflables">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:orientation="vertical">
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgTomada"
                 android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal"
@@ -99,26 +99,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilperfilUserAddempleado"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/txt_field_seleccion_inflable_list"
-                        android:layout_marginTop="@dimen/item_padding_32"
-                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
-                        style="@style/MyStyleAutocomplete"
-                        >
-
-                        <AutoCompleteTextView
-                            android:id="@+id/actvPerfilUsuarioEmpleado"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:enabled="false"
-                            />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                   <!-- <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilDirectorDetalleEmpresa"
+                        android:id="@+id/tilAddNombreInflable"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/item_padding_32"
@@ -127,62 +108,79 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etDirectorDetalleEmpresa"
+                            android:id="@+id/etAddNombreInflable"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Director"
-                            android:enabled="false"
-                            android:inputType="number"
-                            android:imeOptions="actionNext"
-                            android:nextFocusForward="@id/tilTelefonoDetalleEmpresa"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilTelefonoDetalleEmpresa"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/item_padding_32"
-                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
-                        style="@style/MyTheme.AddData.TextInputLayout"
-                        >
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etTelefonoDetalleEmpresa"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Telefono"
-                            android:enabled="false"
-                            android:inputType="number"
-                            android:imeOptions="actionNext"
-                            android:nextFocusForward="@id/tilDireccionDetalleEmpresa"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilDireccionDetalleEmpresa"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/item_padding_32"
-                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
-                        style="@style/MyTheme.AddData.TextInputLayout"
-                        >
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etDireccionDetalleEmpresa"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Direccion"
-                            android:enabled="false"
+                            android:hint="@string/txt_field_menu_add_inflables"
+                            android:enabled="true"
                             android:inputType="textUri"
-                            android:imeOptions="actionNone"
+                            android:imeOptions="actionNext"
+                            android:nextFocusForward="@id/tilAddMedidas"
                             />
-                    </com.google.android.material.textfield.TextInputLayout>-->
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAddMedidas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_padding_32"
+                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                        style="@style/MyTheme.AddData.TextInputLayout"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etMedidas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/txt_field_medidas"
+                            android:enabled="true"
+                            android:inputType="textUri"
+                            android:imeOptions="actionNext"
+                            android:nextFocusForward="@id/tilAddPrecio"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAddPrecio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_padding_32"
+                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                        style="@style/MyTheme.AddData.TextInputLayout"
+                        >
 
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAddPrecio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/txt_field_precio"
+                            android:enabled="true"
+                            android:inputType="number"
+                            android:imeOptions="actionNext"
+                            android:nextFocusForward="@id/tilAddDescripcion"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAddDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_padding_32"
+                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                        style="@style/MyTheme.AddData.TextInputLayout"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAddDescripcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/txt_field_descripcion"
+                            android:enabled="true"
+                            android:inputType="textMultiLine"
+                            android:imeOptions="actionDone"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -194,12 +192,12 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabDetalleEmpresas"
+        android:id="@+id/fabAddInflables"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/padding_default_16"
-        android:src="@drawable/ic_flecha_siguiente"
+        android:src="@drawable/ic_cloud"
         style="@style/Widget.MaterialComponents.FloatingActionButton"
         />
 

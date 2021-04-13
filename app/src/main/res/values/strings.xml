@@ -12,4 +12,9 @@
     <string name="txt_field_menu_add_nuestras_experiencias">Agregar Nuevas Experiencias</string>
     <string name="txt_field_menu_add_Buzon">Agregar Buzon</string>
     <string name="txt_field_seleccion_inflable_list">Selecciona un Inflable</string>
+    <string name="txt_field_medidas">Medidas</string>
+    <string name="txt_field_precio">Precio</string>
+    <string name="txt_field_descripcion">Descripcion</string>
+    <string name="common_validate_field_required">Requerido</string>
+    <string name="main_message_add_image">Agrega una Foto o Imagen</string>
 </resources>
