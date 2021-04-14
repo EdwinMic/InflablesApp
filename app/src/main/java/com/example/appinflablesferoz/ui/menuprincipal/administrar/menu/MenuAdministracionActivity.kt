@@ -12,6 +12,11 @@ import com.example.appinflablesferoz.ui.menuprincipal.administrar.addinflables.A
 import com.example.appinflablesferoz.ui.menuprincipal.administrar.addnuevasexperiencias.AddNuevasExperienciasActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.imgFotoMenuBuzon
+import kotlinx.android.synthetic.main.activity_main.imgFotoMenuContactos
+import kotlinx.android.synthetic.main.activity_main.imgFotoMenuExperiencias
+import kotlinx.android.synthetic.main.activity_main.imgFotoMenuInflables
+import kotlinx.android.synthetic.main.activity_menu_administracion.*
 import java.lang.invoke.ConstantCallSite
 
 class MenuAdministracionActivity : AppCompatActivity() {
@@ -29,6 +34,11 @@ class MenuAdministracionActivity : AppCompatActivity() {
         val btnAddInflables = findViewById<ConstraintLayout>(R.id.opcionAddInflables)
         btnAddInflables.setOnClickListener {
             val intent = Intent(this, AddInflablesActivity::class.java)
+            startActivity(intent)
+        }
+
+        opcionAddExperiencias.setOnClickListener {
+            val intent = Intent(this, AddNuevasExperienciasActivity::class.java)
             startActivity(intent)
         }
 

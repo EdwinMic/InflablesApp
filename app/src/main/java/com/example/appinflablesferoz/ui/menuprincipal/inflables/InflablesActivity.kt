@@ -1,7 +1,8 @@
 package com.example.appinflablesferoz.ui.menuprincipal.inflables
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,12 @@ class InflablesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inflables)
 
+        setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.title = "Inflables"
+        }
         adapter = InflablesAdapter(this)
 
 
@@ -29,6 +36,32 @@ class InflablesActivity : AppCompatActivity() {
             adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })
+
+    }
+
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+            when(item){
+                case android.R.id.home:
+                //finish();
+                //ejecuta el metodo finish despues de la transicion
+                super.onBackPressed();
+                break;
+            }
+        return super.onOptionsItemSelected(item)
+    }
+*/
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+
+            android.R.id.home ->
+
+                super.onBackPressed()
+        }
+
+        return super.onOptionsItemSelected(item)
 
     }
 }

@@ -48,7 +48,7 @@ class InflablesAdapter(private val context:Context): RecyclerView.Adapter<Inflab
             Glide.with(context).load(user.imageUrl).apply(options).into(itemView.imgCircle)
             itemView.txtTitulo.text = user.nombre
             itemView.txtMedidas.text = "Medidas: " + user.medidas
-            itemView.txtPrecio.text = "Precio: " + user.precio
+            itemView.txtPrecio.text = "Precio: $" + user.precio
 
             itemView.txtDescripcion.text = user.descripcion
 

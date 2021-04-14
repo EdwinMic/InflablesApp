@@ -18,13 +18,12 @@
         android:theme="@style/Base.MyTheme">
         <activity android:name=".ui.menuprincipal.inflables.InflablesActivity"></activity>
         <activity android:name=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity"></activity>
-        <activity android:name=".ui.menuprincipal.administrar.addnuevasexperiencias.AddNuevasExperienciasActivity" />
+        <activity android:name=".ui.menuprincipal.administrar.addnuevasexperiencias.AddNuevasExperienciasActivity"></activity>
         <activity android:name=".ui.menuprincipal.administrar.menu.MenuAdministracionActivity" />
         <activity android:name=".ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasActivity" />
         <activity android:name=".ui.menuprincipal.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

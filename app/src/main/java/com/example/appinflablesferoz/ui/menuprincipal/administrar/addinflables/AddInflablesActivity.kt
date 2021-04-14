@@ -12,6 +12,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -103,6 +104,7 @@ class AddInflablesActivity : AppCompatActivity() {
         })
     }
 
+
     //iniciar firebase
     private fun iniciarFirebase(){
 
@@ -115,6 +117,8 @@ class AddInflablesActivity : AppCompatActivity() {
         mDataBaseStorageReference = firebaseDatabase!!.reference
 
     }
+
+
 
     //AddImage
     private fun guardarImagen() {
