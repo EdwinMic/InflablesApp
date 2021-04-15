@@ -151,6 +151,59 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/opcionContrataciones"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="@dimen/padding_default_16"
+                android:layout_marginStart="@dimen/padding_default_16"
+                android:layout_marginEnd="@dimen/padding_default_16"
+                android:background="@drawable/colores_gradientes_purple"
+                android:orientation="vertical"
+
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgFotoMenuContrataciones"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:layout_marginStart="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_min"
+                    android:layout_marginBottom="@dimen/common_padding_min"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTituloContrataciones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_field_menu_contrataciones"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_on_secondary"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:layout_constraintStart_toEndOf="@id/imgFotoMenuContrataciones"
+                    app:layout_constraintEnd_toStartOf="@id/imgDecorationContrataciones"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgDecorationContrataciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_flecha_siguiente"
+                    android:layout_marginEnd="@dimen/padding_default_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/opcionUbicanos"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"

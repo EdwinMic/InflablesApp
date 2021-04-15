@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.menuprincipal.administrar.addnuevasexperiencias.AddNuevasExperienciasActivity">
+    android:id="@+id/containerAddExperiencias"
+    tools:context=".ui.menuprincipal.nuestrasexperiencias.addnuevasexperiencias.AddNuevasExperienciasActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
@@ -23,13 +24,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="64dp">
+        android:layout_marginTop="64dp"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:orientation="vertical">
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgTomadaExperiencia"
+                android:id="@+id/imgTomadaAddExperiencia"
                 android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="150dp"
@@ -53,6 +55,7 @@
                 android:fillViewport="true"
                 >
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -71,7 +74,7 @@
 
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/mtbtnPhotoExperiencia"
+                            android:id="@+id/mtbtnPhotoAddExperiencia"
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Foto"
@@ -83,7 +86,7 @@
 
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/mtbtnGaleriaExperiencia"
+                            android:id="@+id/mtbtnGaleriaAddExperiencia"
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Galeria"
@@ -92,6 +95,16 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             />
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvValoracion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_field_menu_valoranos"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -220,7 +233,7 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <!--<com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/tilAddDescripcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -238,7 +251,7 @@
                             android:inputType="textMultiLine"
                             android:imeOptions="actionDone"
                             />
-                    </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>-->
 
                 </LinearLayout>
 
@@ -250,7 +263,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddInflables"
+        android:id="@+id/fabAddExperiencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

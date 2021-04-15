@@ -17,6 +17,11 @@ class MainActivityViewModel(): ViewModel(){
     }
     val urlImagenTituloContactos: LiveData<String> = _urlImagenTituloContactos
 
+    private val _urlImagenTituloContrataciones = MutableLiveData<String>().apply {
+        value = "https://firebasestorage.googleapis.com/v0/b/inflablesferoz.appspot.com/o/ImagenesPredeterminadas%2Fcalendario.png?alt=media&token=4d7e008a-e2ea-4676-93db-dc270865cfd0"
+    }
+    val urlImagenTituloContrataciones: LiveData<String> = _urlImagenTituloContrataciones
+
     private val _urlImagenTituloUbicanos = MutableLiveData<String>().apply {
         value = "https://firebasestorage.googleapis.com/v0/b/inflablesferoz.appspot.com/o/ImagenesPredeterminadas%2Fmapa.png?alt=media&token=b5435592-72cf-4dae-bb5b-537631405123"
     }

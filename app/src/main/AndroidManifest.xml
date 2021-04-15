@@ -16,14 +16,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Base.MyTheme">
-        <activity android:name=".ui.menuprincipal.inflables.InflablesActivity"></activity>
-        <activity android:name=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity"></activity>
-        <activity android:name=".ui.menuprincipal.administrar.addnuevasexperiencias.AddNuevasExperienciasActivity"></activity>
+        <activity android:name=".ui.menuprincipal.buzon.BuzonActivity"></activity>
+        <activity android:name=".ui.menuprincipal.contrataciones.ContratacionesActivity" />
+        <activity android:name=".ui.menuprincipal.contactos.ContactosActivity" />
+        <activity android:name=".ui.menuprincipal.administrar.menu.administrarexperiencias.AdministrarExperienciasActivity" />
+        <activity android:name=".ui.menuprincipal.inflables.InflablesActivity" />
+        <activity android:name=".ui.menuprincipal.administrar.menu.addinflables.AddInflablesActivity" />
+        <activity android:name=".ui.menuprincipal.nuestrasexperiencias.addnuevasexperiencias.AddNuevasExperienciasActivity" />
         <activity android:name=".ui.menuprincipal.administrar.menu.MenuAdministracionActivity" />
         <activity android:name=".ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasActivity" />
         <activity android:name=".ui.menuprincipal.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

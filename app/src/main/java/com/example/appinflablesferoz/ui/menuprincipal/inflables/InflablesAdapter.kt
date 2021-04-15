@@ -40,17 +40,17 @@ class InflablesAdapter(private val context:Context): RecyclerView.Adapter<Inflab
     }
 
     inner class MainViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bindView(user: Inflables){
+        fun bindView(inflable: Inflables){
             val options = RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
 
-            Glide.with(context).load(user.imageUrl).apply(options).into(itemView.imgCircle)
-            itemView.txtTitulo.text = user.nombre
-            itemView.txtMedidas.text = "Medidas: " + user.medidas
-            itemView.txtPrecio.text = "Precio: $" + user.precio
+            Glide.with(context).load(inflable.imageUrl).apply(options).into(itemView.imgCircle)
+            itemView.txtTitulo.text = inflable.nombre
+            itemView.txtMedidas.text = "Medidas: " + inflable.medidas
+            itemView.txtPrecio.text = "Precio: $" + inflable.precio
 
-            itemView.txtDescripcion.text = user.descripcion
+            itemView.txtDescripcion.text = inflable.descripcion
 
             Glide.with(context).load("https://firebasestorage.googleapis.com/v0/b/inflablesferoz.appspot.com/o/ImagenesPredeterminadas%2Fphone.png?alt=media&token=f66d4958-29bd-44af-8b29-e50da5569b0e")
                 .apply(options).into(itemView.btnCall)

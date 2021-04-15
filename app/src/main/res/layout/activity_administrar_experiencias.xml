@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasActivity">
+    tools:context=".ui.menuprincipal.administrar.menu.administrarexperiencias.AdministrarExperienciasActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -24,20 +23,11 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvExperiencias"
+        android:id="@+id/rvExperienciasAdministrar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="80dp"
         />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddExperiencia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/padding_default_16"
-        android:src="@drawable/ic_add"
-        android:background="@color/color_on_surface"
-        style="@style/Widget.MaterialComponents.FloatingActionButton"
-        />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

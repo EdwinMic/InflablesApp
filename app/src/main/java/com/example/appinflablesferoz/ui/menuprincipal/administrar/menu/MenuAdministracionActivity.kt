@@ -8,16 +8,15 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.appinflablesferoz.R
 import com.example.appinflablesferoz.ui.menuprincipal.MainActivityViewModel
-import com.example.appinflablesferoz.ui.menuprincipal.administrar.addinflables.AddInflablesActivity
-import com.example.appinflablesferoz.ui.menuprincipal.administrar.addnuevasexperiencias.AddNuevasExperienciasActivity
+import com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.addinflables.AddInflablesActivity
+import com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.administrarexperiencias.AdministrarExperienciasActivity
+import com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.addnuevasexperiencias.AddNuevasExperienciasActivity
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.imgFotoMenuBuzon
 import kotlinx.android.synthetic.main.activity_main.imgFotoMenuContactos
 import kotlinx.android.synthetic.main.activity_main.imgFotoMenuExperiencias
 import kotlinx.android.synthetic.main.activity_main.imgFotoMenuInflables
 import kotlinx.android.synthetic.main.activity_menu_administracion.*
-import java.lang.invoke.ConstantCallSite
 
 class MenuAdministracionActivity : AppCompatActivity() {
 
@@ -38,7 +37,7 @@ class MenuAdministracionActivity : AppCompatActivity() {
         }
 
         opcionAddExperiencias.setOnClickListener {
-            val intent = Intent(this, AddNuevasExperienciasActivity::class.java)
+            val intent = Intent(this, AdministrarExperienciasActivity::class.java)
             startActivity(intent)
         }
 

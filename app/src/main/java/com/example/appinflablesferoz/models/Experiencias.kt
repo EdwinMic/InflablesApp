@@ -2,8 +2,9 @@ package com.example.appinflablesferoz.models
 
 data class Experiencias(
     var id:String? = null,
-    var inflable:String? = null,
-    var comentario:String? = null,
+    var inflable: String? = null,
+    var fecha: String? = null,
+    var estatus: String? = null,
     var calificacion:Int? =  null,
     var imageUrl:String? = null
 ) {

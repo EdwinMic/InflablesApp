@@ -18,12 +18,12 @@
         android:layout_marginEnd="@dimen/padding_default_16"
         android:layout_marginTop="@dimen/padding_default_16"
         android:layout_marginBottom="@dimen/padding_default_16"
-        android:background="@drawable/colores_gradientes_sky"
+        android:background="@drawable/colores_gradientes_sea"
         >
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgCircle"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginTop="@dimen/padding_default_16"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

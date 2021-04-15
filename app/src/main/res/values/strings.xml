@@ -5,7 +5,7 @@
     <string name="txt_field_menu_contactos">Contactos</string>
     <string name="txt_field_menu_ubicanos">Ubicanos</string>
     <string name="txt_field_menu_nuestras_experiencias">Nuestras Experiencias</string>
-    <string name="txt_field_menu_Buzon">Buzon</string>
+    <string name="txt_field_menu_Buzon">Buzon de quejas y sugerencias</string>
     <string name="txt_field_menu_administrar">Administrar</string>
     <string name="txt_field_menu_add_inflables">Agregar Inflables</string>
     <string name="txt_field_menu_add_contactos">Agregar Contactos</string>
@@ -18,4 +18,11 @@
     <string name="common_validate_field_required">Requerido</string>
     <string name="main_message_add_image">Agrega una Foto o Imagen</string>
     <string name="txt_field_comentarios">Deja un comentario</string>
+    <string name="txt_field_menu_valoranos">Valoranos</string>
+    <string name="common_validate_field_add_valoracion">Agrega una calificacion</string>
+    <string name="txt_field_fecha">Fecha</string>
+    <string name="txt_field_delete">Eliminar</string>
+    <string name="txt_field_autorizar">Autorizar</string>
+    <string name="txt_field_menu_contrataciones">Contrataciones</string>
+    <string name="txt_field_titulo_buzon_cabecera">Compartenos un comentario</string>
 </resources>

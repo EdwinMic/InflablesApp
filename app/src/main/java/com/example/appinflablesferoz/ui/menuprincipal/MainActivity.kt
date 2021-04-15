@@ -9,7 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.appinflablesferoz.R
 import com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.MenuAdministracionActivity
+import com.example.appinflablesferoz.ui.menuprincipal.buzon.BuzonActivity
+import com.example.appinflablesferoz.ui.menuprincipal.contactos.ContactosActivity
+import com.example.appinflablesferoz.ui.menuprincipal.contrataciones.ContratacionesActivity
 import com.example.appinflablesferoz.ui.menuprincipal.inflables.InflablesActivity
+import com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -36,6 +40,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intento)
         })
 
+        opcionContactos.setOnClickListener(View.OnClickListener {
+            val intento = Intent(this, ContactosActivity::class.java)
+            startActivity(intento)
+        })
+
+        opcionContrataciones.setOnClickListener(View.OnClickListener {
+            val intento = Intent(this, ContratacionesActivity::class.java)
+            startActivity(intento)
+        })
+
+        opcionExperiencias.setOnClickListener(View.OnClickListener {
+            val intento = Intent(this, NuestrasExperienciasActivity::class.java)
+            startActivity(intento)
+        })
+        opcionBuzon.setOnClickListener(View.OnClickListener {
+            val intento = Intent(this, BuzonActivity::class.java)
+            startActivity(intento)
+        })
+
+
         initUI()
     }
 
@@ -58,7 +82,14 @@ class MainActivity : AppCompatActivity() {
                 .centerCrop()
                 .into(imgFotoMenuContactos)
         })
+        viewModelMainActivity.urlImagenTituloContrataciones.observe(this, Observer {
+            Picasso.get()
+                .load(it)
+                .resize(88, 88)
+                .centerCrop()
+                .into(imgFotoMenuContrataciones)
 
+        })
         viewModelMainActivity.urlImagenTituloUbicanos.observe(this, Observer {
             Picasso.get()
                 .load(it)
@@ -94,6 +125,8 @@ class MainActivity : AppCompatActivity() {
                 .into(imgFotoMenuAdministrar)
 
         })
+
+
 
 
 
