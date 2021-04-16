@@ -14,6 +14,7 @@ import com.example.appinflablesferoz.ui.menuprincipal.contactos.ContactosActivit
 import com.example.appinflablesferoz.ui.menuprincipal.contrataciones.ContratacionesActivity
 import com.example.appinflablesferoz.ui.menuprincipal.inflables.InflablesActivity
 import com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasActivity
+import com.example.appinflablesferoz.ui.menuprincipal.ubicanos.UbicanosActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -50,6 +51,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intento)
         })
 
+        opcionUbicanos.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, UbicanosActivity::class.java)
+            startActivity(intent)
+        })
         opcionExperiencias.setOnClickListener(View.OnClickListener {
             val intento = Intent(this, NuestrasExperienciasActivity::class.java)
             startActivity(intento)

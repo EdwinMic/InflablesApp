@@ -137,7 +137,7 @@ class AddNuevasExperienciasActivity : AppCompatActivity() {
             checkPermissionToApp(Manifest.permission.READ_EXTERNAL_STORAGE,RP_STORAGE)
         }
 
-        fabAddExperiencia.setOnClickListener(View.OnClickListener {
+        fabAddExperienciaSave.setOnClickListener(View.OnClickListener {
             if(validarCampos()){
                 guardarImagen()
             }

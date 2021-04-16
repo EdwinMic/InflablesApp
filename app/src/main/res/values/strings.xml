@@ -25,4 +25,7 @@
     <string name="txt_field_autorizar">Autorizar</string>
     <string name="txt_field_menu_contrataciones">Contrataciones</string>
     <string name="txt_field_titulo_buzon_cabecera">Compartenos un comentario</string>
+    <string name="txt_field_menu_add_nombre">Ingresar Nombre</string>
+    <string name="txt_field_guaardar">Guardar</string>
+    <string name="title_activity_ubicanos">Map</string>
 </resources>

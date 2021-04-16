@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/containerBuzon"
     tools:context=".ui.menuprincipal.buzon.BuzonActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -31,27 +32,125 @@
         app:layout_constraintTop_toBottomOf="@+id/appbarBuzon"
         >
         <TextView
+            android:id="@+id/tvTituloBuzon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/txt_field_titulo_buzon_cabecera"
             android:textColor="@color/color_surface"
             android:textAlignment="center"
-            android:layout_marginTop="@dimen/item_padding_32"
-            android:textSize="@dimen/padding_default_16"
+            android:layout_marginTop="@dimen/padding_default_16"
+            android:textSize="25dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgDecorationBuzon"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="@dimen/padding_default_16"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloBuzon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="225dp"
         android:layout_marginStart="@dimen/item_padding_32"
         android:layout_marginEnd="@dimen/item_padding_32"
         android:layout_marginBottom="@dimen/item_padding_32">
 
-    </com.google.android.material.card.MaterialCardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAddInflableBuzon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_padding_32"
+                app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                style="@style/MyStyleAutocomplete"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/actvListAddInflableBuzon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_field_menu_inflables"
+                    android:enabled="false"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAddNombreBuzon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_padding_32"
+                app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                style="@style/MyTheme.AddData.TextInputLayout"
+                app:layout_constraintTop_toBottomOf="@id/tilAddInflableBuzon"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAddNombreBuzon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_field_menu_add_nombre"
+                    android:enabled="true"
+                    android:inputType="textUri"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/tilAddComentarioBuzon"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAddComentarioBuzon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_padding_32"
+                app:layout_constraintTop_toBottomOf="@id/tilAddNombreBuzon"
+                app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                style="@style/MyTheme.AddData.TextInputLayout"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAddComentarioBuzon"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:hint="@string/txt_field_comentarios"
+                    android:enabled="true"
+                    android:inputType="textMultiLine"
+                    android:imeOptions="actionNone"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddBuzon"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="bottom|end"
+        android:text="@string/txt_field_guaardar"
+        android:layout_marginEnd="@dimen/common_padding_min"
+        android:layout_marginBottom="@dimen/common_padding_min"
+        android:src="@drawable/ic_cloud"
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
