@@ -4,4 +4,5 @@
     <dimen name="common_padding_min">8dp</dimen>
     <dimen name="img_item_size">88dp</dimen>
     <dimen name="item_padding_32">32dp</dimen>
+    <dimen name="main_image_size">256dp</dimen>
 </resources>

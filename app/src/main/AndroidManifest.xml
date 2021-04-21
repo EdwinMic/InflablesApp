@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.appinflablesferoz">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -39,7 +36,9 @@
 
         <activity
             android:name=".ui.menuprincipal.ubicanos.UbicanosActivity"
-            android:label="@string/title_activity_ubicanos"></activity>
+            android:label="@string/title_activity_ubicanos" />
+        <activity android:name=".ui.menuprincipal.miperfil.MiPerfilActivity">
+        </activity>
         <activity android:name=".ui.menuprincipal.buzon.BuzonActivity" />
         <activity android:name=".ui.menuprincipal.contrataciones.ContratacionesActivity" />
         <activity android:name=".ui.menuprincipal.contactos.ContactosActivity" />

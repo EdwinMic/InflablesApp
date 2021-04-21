@@ -3,6 +3,8 @@ package com.example.appinflablesferoz.ui.menuprincipal
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.appinflablesferoz.domain.network.Repo
+import com.example.appinflablesferoz.models.Experiencias
 
 class MainActivityViewModel(): ViewModel(){
 
@@ -42,4 +44,20 @@ class MainActivityViewModel(): ViewModel(){
     }
     val urlImagenTituloAdministrar: LiveData<String> = _urlImagenTituloAdministrar
 
+    private val _urlImagenTituloMiPerfil = MutableLiveData<String>().apply {
+        value = "https://firebasestorage.googleapis.com/v0/b/inflablesferoz.appspot.com/o/ImagenesPredeterminadas%2Fperfil.png?alt=media&token=6f0e46f8-f780-48f9-a42c-210aabf52e08"
+    }
+    val urlImagenTituloMiPerfil: LiveData<String> = _urlImagenTituloMiPerfil
+
+
+    private val repo = Repo()
+
+    //fun fetchUserData(context:Context):LiveData<MutableList<Usuario>> {
+    fun fetchDataScrollImage():LiveData<MutableList<Experiencias>> {
+        val mutableData = MutableLiveData<MutableList<Experiencias>>()
+        repo.retornarDataExperiencias("Usuario").observeForever { userList ->
+            mutableData.value = userList
+        }
+        return mutableData
+    }
 }

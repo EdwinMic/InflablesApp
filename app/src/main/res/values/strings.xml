@@ -28,4 +28,10 @@
     <string name="txt_field_menu_add_nombre">Ingresar Nombre</string>
     <string name="txt_field_guaardar">Guardar</string>
     <string name="title_activity_ubicanos">Map</string>
+    <string name="txt_field_menu_miperfil">Mi Perfil</string>
+    <string name="txt_field_correo">Correo</string>
+    <string name="txt_field_proveedor">Proveedor</string>
+    <string name="txt_field_cerrar_sesion">Cerrar Sesion</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

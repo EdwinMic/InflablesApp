@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.menuprincipal.miperfil.MiPerfilActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarMiPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/fondo_appbars"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/fondo_appbars"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgPhotoProfile"
+        android:layout_width="@dimen/main_image_size"
+        android:layout_height="@dimen/main_image_size"
+        android:layout_margin="@dimen/common_padding_min"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="@color/color_primary"
+        app:layout_constraintTop_toBottomOf="@+id/appBarMiPerfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/progresBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_padding_min"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/imgPhotoProfile"
+        app:layout_constraintEnd_toEndOf="@id/imgPhotoProfile"
+        app:layout_constraintTop_toBottomOf="@id/imgPhotoProfile"
+        style="?android:progressBarStyleHorizontal"
+        />
+
+    <TextView
+        android:id="@+id/tvProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/progresBar"
+        app:layout_constraintTop_toTopOf="@id/progresBar"
+        app:layout_constraintBottom_toBottomOf="@id/progresBar"
+        />
+
+
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:hint="@string/txt_field_menu_add_nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProgress"
+        style="@style/TextViewBase"/>
+    <TextView
+        android:id="@+id/tvEmail"
+        android:hint="@string/txt_field_correo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName"
+        style="@style/TextViewBase"
+        />
+    <TextView
+        android:id="@+id/tvProvaider"
+        android:hint="@string/txt_field_proveedor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+        style="@style/TextViewBase"/>
+
+        <Button
+            android:id="@+id/btnIniciarSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProvaider"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Iniciar Sesion"
+            />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMiPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProvaider"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
