@@ -1,5 +1,6 @@
 package com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.administrarexperiencias
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,15 +13,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.appinflablesferoz.R
 import com.example.appinflablesferoz.models.Experiencias
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.Query
 import kotlinx.android.synthetic.main.item_row_administrar_experiencias.view.*
-import java.util.*
-import java.util.stream.Collectors.toMap
 
 
 class AdministrarExperienciasAdapter(private val context: Context): RecyclerView.Adapter<AdministrarExperienciasAdapter.MainViewHolder>()  {
@@ -102,8 +99,11 @@ class AdministrarExperienciasAdapter(private val context: Context): RecyclerView
                 itemView.btnCalificacionAdminExperiencias5.setImageResource(R.drawable.ic_star_complet_selected)
             }
 
-            itemView.btnApartarAdminExperiencias.setOnClickListener(View.OnClickListener {
+            itemView.btnAutorizarAdminExperiencias.setOnClickListener(View.OnClickListener {
 
+
+
+                Log.e("entrasyte","btnAutorizar")
                 val experienciasSet = Experiencias()
                 experienciasSet.id = experiencias.id
                 experienciasSet.inflable = experiencias.inflable
@@ -125,7 +125,14 @@ class AdministrarExperienciasAdapter(private val context: Context): RecyclerView
 
                 )
 
-                databaseReference?.updateChildren(childUpdates)
+                databaseReference?.updateChildren(childUpdates)?.addOnCompleteListener(OnCompleteListener {
+                    Snackbar.make(itemView, "Estatus Actualizado", Snackbar.LENGTH_INDEFINITE)
+                        .setAction("OK", View.OnClickListener {
+                            (context as Activity).finish()
+                        })
+                        .show()
+                })
+
 
 
             })

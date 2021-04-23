@@ -187,7 +187,7 @@
             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btnApartarAdminExperiencias"
+                android:id="@+id/btnAutorizarAdminExperiencias"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:background="@drawable/colores_gradientes_fire"
