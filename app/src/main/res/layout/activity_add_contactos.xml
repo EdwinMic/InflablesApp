@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerAddContactos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.menuprincipal.administrar.menu.addinflables.AddInflablesActivity"
-    android:id="@+id/containerAddInflables">
+    tools:context=".ui.menuprincipal.administrar.menu.addcontactos.AddContactosActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarAddContactos"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/fondo_appbars"
@@ -31,12 +32,12 @@
             android:layout_height="250dp"
             android:orientation="vertical">
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgTomada"
+                android:id="@+id/imgTomadaAddContacto"
                 android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_image_search"/>
+                android:src="@drawable/ic_image"/>
 
         </LinearLayout>
 
@@ -70,7 +71,7 @@
 
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/mtbtnPhoto"
+                            android:id="@+id/mtbtnPhotoAddContacto"
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Foto"
@@ -86,7 +87,7 @@
 
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/mtbtnGaleria"
+                            android:id="@+id/mtbtnGaleriaAddContacto"
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Galeria"
@@ -99,51 +100,8 @@
                             />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/mtbtnSaveAddInflable"
-                        android:layout_width="250dp"
-                        android:layout_height="60dp"
-                        android:text="Guardar Inflable"
-                        android:enabled="true"
-                        android:layout_marginTop="@dimen/padding_default_16"
-                        app:cornerRadius="10dp"
-                        android:backgroundTint="@color/colorAccent"
-                        android:textColor="@color/cardview_light_background"
-                        />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/mtbtnSaveCarruselAddInflable"
-                        android:layout_width="250dp"
-                        android:layout_height="60dp"
-                        android:text="Guardar Carrusel"
-                        android:enabled="true"
-                        app:cornerRadius="10dp"
-                        android:layout_marginTop="@dimen/padding_default_16"
-                        android:backgroundTint="@color/colorAccent"
-                        android:textColor="@color/cardview_light_background"
-                        />
-
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilListAddInflables"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/txt_field_menu_inflables"
-                        android:layout_marginTop="@dimen/padding_default_16"
-                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
-                        style="@style/MyStyleAutocomplete"
-                        >
-
-                        <AutoCompleteTextView
-                            android:id="@+id/actvListAddInflable"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:enabled="false"
-                            />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilAddNombreInflable"
+                        android:id="@+id/tilAddContactoNombre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/item_padding_32"
@@ -152,10 +110,10 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etAddNombreInflable"
+                            android:id="@+id/etAddContactoNombre"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/txt_field_menu_add_inflables"
+                            android:hint="@string/txt_field_menu_add_nombre"
                             android:enabled="true"
                             android:inputType="textUri"
                             android:imeOptions="actionNext"
@@ -164,7 +122,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilAddMedidas"
+                        android:id="@+id/tilAddContactoTel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/item_padding_32"
@@ -173,41 +131,19 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etMedidas"
+                            android:id="@+id/etAddContactoTel"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/txt_field_medidas"
-                            android:enabled="true"
-                            android:inputType="textUri"
-                            android:imeOptions="actionNext"
-                            android:nextFocusForward="@id/tilAddPrecio"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilAddPrecio"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/item_padding_32"
-                        app:startIconDrawable="@drawable/ic_flecha_siguiente"
-                        style="@style/MyTheme.AddData.TextInputLayout"
-                        >
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etAddPrecio"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/txt_field_precio"
+                            android:hint="@string/txt_field_telefono"
                             android:enabled="true"
                             android:inputType="number"
                             android:imeOptions="actionNext"
-                            android:nextFocusForward="@id/tilAddDescripcion"
+                            android:nextFocusForward="@id/tilAddContactoCorreo"
                             />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilAddDescripcion"
+                        android:id="@+id/tilAddContactoCorreo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/item_padding_32"
@@ -216,17 +152,27 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etAddDescripcion"
+                            android:id="@+id/etAddContactoCorreo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/txt_field_descripcion"
+                            android:hint="@string/txt_field_correo"
                             android:enabled="true"
-                            android:inputType="textMultiLine"
-                            android:imeOptions="actionDone"
+                            android:inputType="textUri"
+                            android:imeOptions="actionNone"
                             />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mtbtnSaveContacto"
+                        android:layout_width="250dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="@dimen/padding_default_16"
+                        android:backgroundTint="@color/colorAccent"
+                        android:enabled="true"
+                        android:text="Guardar"
+                        android:textColor="@color/cardview_light_background"
+                        app:cornerRadius="10dp"/>
 
                 </LinearLayout>
 
@@ -237,7 +183,7 @@
     </RelativeLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddInflables"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -245,17 +191,5 @@
         android:layout_margin="@dimen/padding_default_16"
         android:src="@drawable/ic_cloud"
         style="@style/Widget.MaterialComponents.FloatingActionButton"
-        />
-
+        />-->
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.menuprincipal.administrar.addinflables.AddInflablesActivity">
-</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appinflablesferoz.R
-import com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.addnuevasexperiencias.AddNuevasExperienciasActivity
+import com.example.appinflablesferoz.ui.menuprincipal.miperfil.addnuevasexperiencias.AddNuevasExperienciasActivity
 import kotlinx.android.synthetic.main.activity_nuestras_experiencias.*
 import kotlinx.android.synthetic.main.activity_nuestras_experiencias.toolbar
 

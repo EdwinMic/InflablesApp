@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/btnBuscarResumenInfl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/padding_default_16"
@@ -57,7 +58,7 @@
             android:layout_gravity="center_vertical|end"
             android:layout_marginStart="@dimen/padding_default_16"
             android:layout_marginEnd="@dimen/padding_default_16"
-            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min_8"
             app:layout_constraintTop_toBottomOf="@id/txtTitulo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +73,7 @@
             android:layout_gravity="center_vertical|end"
             android:layout_marginStart="@dimen/padding_default_16"
             android:layout_marginEnd="@dimen/padding_default_16"
-            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min_8"
             app:layout_constraintTop_toBottomOf="@id/txtMedidas"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +88,7 @@
             android:layout_gravity="center_vertical|end"
             android:layout_marginStart="@dimen/padding_default_16"
             android:layout_marginEnd="@dimen/padding_default_16"
-            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min_8"
             app:layout_constraintTop_toBottomOf="@id/txtPrecio"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +100,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="end"
-            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min_8"
             android:layout_marginEnd="@dimen/padding_default_16"
             android:paddingBottom="@dimen/padding_default_16"
             app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
@@ -111,8 +112,8 @@
                 android:id="@+id/btnApartar"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:background="@drawable/colores_gradientes_fire"
-                android:layout_marginEnd="@dimen/common_padding_min"
+                android:background="@drawable/colores_gradientes_pink"
+                android:layout_marginEnd="@dimen/common_padding_min_8"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -129,7 +130,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <!--<de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btnCall"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -139,7 +140,7 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btnWhats"
                 android:layout_width="40dp"
-                android:layout_height="40dp"/>
+                android:layout_height="40dp"/>-->
 
         </LinearLayout>
 

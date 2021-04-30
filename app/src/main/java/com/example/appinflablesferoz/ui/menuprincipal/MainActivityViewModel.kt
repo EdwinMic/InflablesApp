@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.appinflablesferoz.domain.network.Repo
 import com.example.appinflablesferoz.models.Experiencias
+import org.imaginativeworld.whynotimagecarousel.CarouselItem
 
 class MainActivityViewModel(): ViewModel(){
 
@@ -52,9 +53,11 @@ class MainActivityViewModel(): ViewModel(){
 
     private val repo = Repo()
 
-    //fun fetchUserData(context:Context):LiveData<MutableList<Usuario>> {
+
     fun fetchDataScrollImage():LiveData<MutableList<Experiencias>> {
+    //fun fetchDataScrollImage():LiveData<MutableList<CarouselItem>> {
         val mutableData = MutableLiveData<MutableList<Experiencias>>()
+        //val mutableData = MutableLiveData<MutableList<CarouselItem>>()
         repo.retornarDataExperiencias("Usuario").observeForever { userList ->
             mutableData.value = userList
         }

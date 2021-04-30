@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.appinflablesferoz.domain.network.Repo
 import com.example.appinflablesferoz.models.Experiencias
+import org.imaginativeworld.whynotimagecarousel.CarouselItem
 
 class AdministrarExperienciasViewModel: ViewModel() {
 

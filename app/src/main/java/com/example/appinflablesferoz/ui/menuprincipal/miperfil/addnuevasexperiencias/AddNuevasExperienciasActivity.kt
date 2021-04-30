@@ -1,4 +1,4 @@
-package com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.addnuevasexperiencias
+package com.example.appinflablesferoz.ui.menuprincipal.miperfil.addnuevasexperiencias
 
 import android.Manifest
 import android.app.Activity

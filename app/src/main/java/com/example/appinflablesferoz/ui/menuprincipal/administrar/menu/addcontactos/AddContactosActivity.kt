@@ -1,4 +1,4 @@
-package com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.addinflables
+package com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.addcontactos
 
 import android.Manifest
 import android.app.Activity
@@ -7,24 +7,21 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
-import android.view.MenuItem
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.appinflablesferoz.R
-import com.example.appinflablesferoz.models.Carrusel
+import com.example.appinflablesferoz.models.Contactos
 import com.example.appinflablesferoz.models.Inflables
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
@@ -33,20 +30,15 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.activity_add_contactos.*
 import kotlinx.android.synthetic.main.activity_add_inflables.*
-import kotlinx.android.synthetic.main.activity_add_inflables.toolbar
-import kotlinx.android.synthetic.main.activity_add_nuevas_experiencias.*
-import kotlinx.android.synthetic.main.activity_nuestras_experiencias.*
+import kotlinx.android.synthetic.main.activity_mi_perfil.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddInflablesActivity : AppCompatActivity() {
-
-    //ViewModel
-    lateinit var addInflablesActivityViewModel: AddInflablesActivityViewModel
-
+class AddContactosActivity : AppCompatActivity() {
 
     //Variables Camaras/Galeria
     private val RP_CAMERA = 121
@@ -60,7 +52,7 @@ class AddInflablesActivity : AppCompatActivity() {
     private var mPhotoSelectedUri: Uri? = null
 
     private var mStorageReference: StorageReference? = null
-    private val PATH_PROFILE = "Inflables"
+    private val PATH_PROFILE = "Contactos"
     private var mDataBaseStorageReference: DatabaseReference? = null
     private val PATH_PHOTO_URL = "photoUrl"
     var banderaFoto = false
@@ -74,30 +66,23 @@ class AddInflablesActivity : AppCompatActivity() {
     var mAddInflables: Inflables? = Inflables()
     var id = UUID.randomUUID().toString()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_inflables)
+        setContentView(R.layout.activity_add_contactos)
 
-        addInflablesActivityViewModel = ViewModelProvider(this).get(AddInflablesActivityViewModel::class.java)
-
-
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbarAddContactos)
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.title = "Agregar Inflables"
+            actionBar.title = "Mi Perfil"
         }
 
-        val btnPhoto = findViewById<MaterialButton>(R.id.mtbtnPhoto)
-        val btnGallery = findViewById<MaterialButton>(R.id.mtbtnGaleria)
-
-        etAddNombreInflable.setText("Castillo Cocodrilo")
-        etMedidas.setText("6 * 5 Mts")
-        etAddPrecio.setText("750")
-        etAddDescripcion.setText("Encantador inflable para niños de 1 año en adelante")
+        val btnPhoto = findViewById<MaterialButton>(R.id.mtbtnPhotoAddContacto)
+        val btnGallery = findViewById<MaterialButton>(R.id.mtbtnGaleriaAddContacto)
 
         iniciarFirebase()
-        inicirListInflables()
+
 
         btnPhoto.setOnClickListener {
             Toast.makeText(this,"Hola", Toast.LENGTH_LONG).show()
@@ -110,26 +95,14 @@ class AddInflablesActivity : AppCompatActivity() {
         }
 
 
-        mtbtnSaveAddInflable.setOnClickListener(View.OnClickListener {
+        mtbtnSaveContacto.setOnClickListener(View.OnClickListener {
             if(validarCampos()){
-                guardarImagen("inflable")
+                guardarImagen()
             }
         })
 
-        mtbtnSaveCarruselAddInflable.setOnClickListener(View.OnClickListener {
-            if (validarCamposCarrusel()){
-                guardarImagen("carrusel")
-            }
 
-        })
-
-        fabAddInflables.setOnClickListener(View.OnClickListener {
-            if(validarCampos()){
-                guardarImagen("inflable")
-            }
-        })
     }
-
 
     //iniciar firebase
     private fun iniciarFirebase(){
@@ -145,25 +118,12 @@ class AddInflablesActivity : AppCompatActivity() {
     }
 
 
-    private fun inicirListInflables(){
-        val listPerfiles = arrayOf(
-            "Castillo Cocodrilo",
-            "Escaladora",
-            "Castillo Aventura",
-            "Castillo Woddy"
-        )
-
-        val adapterPerfiles: ArrayAdapter<*> = ArrayAdapter(this,R.layout.item_menu_dropdown,listPerfiles)
-        actvListAddInflable.setAdapter(adapterPerfiles)
-    }
     //AddImage
-    private fun guardarImagen(referencia:String) {
+    private fun guardarImagen() {
 
         try {
-            var profileReference = mStorageReference!!.child(PATH_PROFILE)
-            if(referencia.equals("carrusel")){
-                profileReference = mStorageReference!!.child(referencia).child(actvListAddInflable.text.toString())
-            }
+            val profileReference =
+                mStorageReference!!.child(PATH_PROFILE)
 
             //Nombre de la imagen
             val photoReference =profileReference.child(id)
@@ -176,13 +136,7 @@ class AddInflablesActivity : AppCompatActivity() {
                     //Toast.makeText(AddRegistroActivity.this, "Imagen cargada", Toast.LENGTH_SHORT).show();
                     taskSnapshot.storage.downloadUrl
                         .addOnSuccessListener { uri ->
-
-                            if(referencia.equals("inflable")){
-                                saveOrEdit(uri)
-                            }else {
-                                saveOrEditCarrusel(uri)
-                            }
-
+                            saveOrEdit(uri)
                             //btnDelete.setVisibility(View.VISIBLE);
                             //mTextMessage.setText(R.string.main_message_done);
                         }
@@ -191,88 +145,63 @@ class AddInflablesActivity : AppCompatActivity() {
                     //Snackbar.make(container, R.string.main_message_upload_error, Snackbar.LENGTH_LONG).show();
                 }
         } catch (e: java.lang.Exception) {
-            Snackbar.make(containerAddInflables,R.string.main_message_add_image,Snackbar.LENGTH_LONG).show()
+            Snackbar.make(containerAddInflables,R.string.main_message_add_image, Snackbar.LENGTH_LONG).show()
         }
 
     }
 
     //AddData RealtimeDatabase
     private fun saveOrEdit(uri: Uri?) {
-        val precio = Integer.valueOf(etAddPrecio.text.toString())
-        val mAddInflables = Inflables(
+        val sdf = SimpleDateFormat("yyyy-MM-dd  HH:mm", Locale.getDefault())
+        val currentDateandTime = sdf.format(Date())
+        val mAddInflables = Contactos(
             id,
-            etAddNombreInflable.text.toString(),
-            etMedidas.text.toString(),
-            precio,
-            "5512365197",
-            etAddDescripcion.text.toString(),
+            etAddContactoNombre.text.toString(),
+            currentDateandTime,
+            etAddContactoTel.text.toString(),
+            etAddContactoTel.text.toString(),
+
             uri.toString()
         )
 
         databaseReference = firebaseDatabase!!.reference
-            .child("Inflables")
+            .child("Contactos")
             .child(id)
 
         databaseReference!!.setValue(mAddInflables).addOnSuccessListener {
-            Snackbar.make(containerAddInflables,"Datos registrados",Snackbar.LENGTH_LONG).show()
+            Snackbar.make(containerAddContactos,"Datos registrados",Snackbar.LENGTH_INDEFINITE).setAction(
+                "OK", View.OnClickListener {
+                    super.onBackPressed()
+                }
+            ).show()
             super.onBackPressed()
-        }
-    }
-
-    private fun saveOrEditCarrusel(uri: Uri?) {
-
-        val mAddInflables = Carrusel(
-            id,
-            etAddNombreInflable.text.toString(),
-            uri.toString()
-        )
-
-        databaseReference = firebaseDatabase!!.reference
-            .child(etAddNombreInflable.text.toString())
-            .child(id)
-
-        databaseReference!!.setValue(mAddInflables).addOnSuccessListener {
-            Snackbar.make(containerAddInflables,"Datos registrados",Snackbar.LENGTH_LONG).setAction("OK", View.OnClickListener {
-                super.onBackPressed()
-            })
-                .show()
-
         }
     }
 
     private fun validarCampos(): Boolean {
         var isValid = true
 
-        if (etAddNombreInflable.text.toString().trim().isNotEmpty()) {
-            tilAddNombreInflable.setError(null)
+        if (etAddContactoNombre.text.toString().trim().isNotEmpty()) {
+            tilAddContactoNombre.setError(null)
         } else {
-            tilAddNombreInflable.setError(getString(R.string.common_validate_field_required))
-            etAddNombreInflable.requestFocus()
+            tilAddContactoNombre.setError(getString(R.string.common_validate_field_required))
+            etAddContactoNombre.requestFocus()
             isValid = false
 
         }
-        if (etMedidas.text.toString().trim().isNotEmpty()) {
-            tilAddMedidas.setError(null)
+        if (etAddContactoTel.text.toString().trim().isNotEmpty()) {
+            tilAddContactoTel.setError(null)
         } else {
-            tilAddMedidas.setError(getString(R.string.common_validate_field_required))
-            etMedidas.requestFocus()
+            tilAddContactoTel.setError(getString(R.string.common_validate_field_required))
+            etAddContactoTel.requestFocus()
             isValid = false
         }
 
-        if (etAddPrecio.text.toString().trim().isNotEmpty()) {
-            tilAddPrecio.setError(null)
+        if (etAddContactoCorreo.text.toString().trim().isNotEmpty()) {
+            tilAddContactoCorreo.setError(null)
         } else {
-            tilAddPrecio.setError(getString(R.string.common_validate_field_required))
-            etAddPrecio.requestFocus()
-            isValid = false
-
-        }
-
-        if (etAddDescripcion.text.toString().trim().isNotEmpty()) {
-            tilAddDescripcion.setError(null)
-        } else {
-            tilAddDescripcion.setError(getString(R.string.common_validate_field_required))
-            tilAddDescripcion.requestFocus()
+            tilAddContactoCorreo.setError(getString(R.string.common_validate_field_required))
+            etAddContactoCorreo.requestFocus()
             isValid = false
 
         }
@@ -280,21 +209,6 @@ class AddInflablesActivity : AppCompatActivity() {
         return isValid
     }
 
-
-    private fun validarCamposCarrusel(): Boolean {
-        var isValid = true
-
-        if (actvListAddInflable.text.toString().trim().isNotEmpty()) {
-            tilListAddInflables.setError(null)
-        } else {
-            tilListAddInflables.setError(getString(R.string.common_validate_field_required))
-            actvListAddInflable.requestFocus()
-            isValid = false
-
-        }
-
-        return isValid
-    }
 
     private fun checkPermissionToApp(permisionStr: String,requestPermision: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -356,7 +270,7 @@ class AddInflablesActivity : AppCompatActivity() {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             val extras = data!!.extras
             val imageBitmap = extras!!["data"] as Bitmap?
-            imgTomada.setImageBitmap(imageBitmap)
+            imgTomadaAddContacto.setImageBitmap(imageBitmap)
         }
 
 
@@ -369,7 +283,7 @@ class AddInflablesActivity : AppCompatActivity() {
                             this.contentResolver,
                             mPhotoSelectedUri
                         )
-                        imgTomada.setImageBitmap(bitmap)
+                        imgTomadaAddContacto.setImageBitmap(bitmap)
                         //btnDelete.setVisibility(View.GONE);
                         //mTextMessage.setText(R.string.main_message_question_upload);
                     } catch (e: Exception) {
@@ -385,7 +299,8 @@ class AddInflablesActivity : AppCompatActivity() {
                     try {
 
                         val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, mPhotoSelectedUri)
-                        val options = RequestOptions().centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL)
+                        val options = RequestOptions().centerCrop().diskCacheStrategy(
+                            DiskCacheStrategy.ALL)
                         /*Picasso.get()
                             .load(bitmap)
                             .resize(88, 88)
@@ -395,7 +310,7 @@ class AddInflablesActivity : AppCompatActivity() {
                         Glide.with(this)
                             .load(bitmap)
                             .apply(options)
-                            .into(imgTomada)
+                            .into(imgTomadaAddContacto)
 
 
                     } catch (e: IOException) {
@@ -416,17 +331,4 @@ class AddInflablesActivity : AppCompatActivity() {
         return contentUri
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-
-            android.R.id.home ->
-
-                super.onBackPressed()
-        }
-
-        return super.onOptionsItemSelected(item)
-
-    }
-
 }
-

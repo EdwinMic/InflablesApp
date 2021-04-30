@@ -1,5 +1,6 @@
 package com.example.appinflablesferoz.ui.menuprincipal.inflables
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appinflablesferoz.R
+import com.example.appinflablesferoz.ui.menuprincipal.inflables.resumeninflable.ResumenInflableActivity
 import kotlinx.android.synthetic.main.activity_inflables.*
 
 class InflablesActivity : AppCompatActivity() {
@@ -24,17 +26,34 @@ class InflablesActivity : AppCompatActivity() {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.title = "Inflables"
         }
-        adapter = InflablesAdapter(this)
 
 
+        /*adapter = InflablesAdapter(this)
         rvInflables.layoutManager = LinearLayoutManager(this)
-        rvInflables.adapter = adapter
+        rvInflables.adapter = adapter*/
+
+
         observerData()
     }
+
     fun observerData() {
-        viewModel.fetchUserData().observe(this, Observer {
-            adapter.setListData(it)
+
+
+       /* viewModel.fetchUserData().observe(this, Observer {
+            adapter.inflableList(it)
             adapter.notifyDataSetChanged()
+
+        })
+*/
+        rvInflables.layoutManager = LinearLayoutManager(this)
+        rvInflables.adapter = InflablesAdapter{
+            val intent = Intent(this, ResumenInflableActivity::class.java)
+            intent.putExtra("id", it)
+            startActivity(intent)
+        }
+        viewModel.getDatosInflables().observe(this, Observer {
+            (rvInflables.adapter as InflablesAdapter).setData(it)
+            (rvInflables.adapter as InflablesAdapter).notifyDataSetChanged()
         })
 
     }

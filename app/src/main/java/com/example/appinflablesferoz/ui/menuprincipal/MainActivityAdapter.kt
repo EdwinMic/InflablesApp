@@ -19,15 +19,16 @@ import kotlinx.android.synthetic.main.item_row_inflables.view.*
 import kotlinx.android.synthetic.main.item_row_scroll_image.view.*
 
 
-class MainActivityAdapter(private val context: Context): RecyclerView.Adapter<MainActivityAdapter.MainViewHolder>()  {
+class MainActivityAdapter(val inflableClick: (String) -> Unit): RecyclerView.Adapter<MainActivityAdapter.MainViewHolder>()  {
 
     private var dataList = mutableListOf<Experiencias>()
+
     fun setListData(data:MutableList<Experiencias>){
         dataList = data
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_row_scroll_image,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_scroll_image,parent,false)
         return MainViewHolder(view)
     }
 
@@ -41,8 +42,9 @@ class MainActivityAdapter(private val context: Context): RecyclerView.Adapter<Ma
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        val user = dataList[position]
-        holder.bindView(user)
+        val experiencias = dataList[position]
+        holder.bindView(experiencias)
+        holder.itemView.setOnClickListener { inflableClick("" + experiencias.inflable) }
     }
 
     inner class MainViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -51,7 +53,12 @@ class MainActivityAdapter(private val context: Context): RecyclerView.Adapter<Ma
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
 
-            Glide.with(context).load(experiencias.imageUrl).apply(options).into(itemView.imgCircleScrollImage)
+
+            Glide.with(itemView.context)
+                .load(experiencias.imageUrl)
+                .apply(options)
+                .placeholder(R.drawable.giphy)
+                .into(itemView.imgCircleScrollImage)
 
             itemView.txtTituloScrollImage.text = experiencias.inflable
 

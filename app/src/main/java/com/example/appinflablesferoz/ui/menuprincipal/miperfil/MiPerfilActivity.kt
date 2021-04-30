@@ -14,11 +14,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import butterknife.OnClick
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.appinflablesferoz.R
+import com.example.appinflablesferoz.ui.menuprincipal.miperfil.addnuevasexperiencias.AddNuevasExperienciasActivity
+import com.example.appinflablesferoz.ui.menuprincipal.miperfil.buzon.BuzonActivity
+import com.example.appinflablesferoz.ui.menuprincipal.miperfil.contrataciones.ContratacionesActivity
 import com.firebase.ui.auth.AuthMethodPickerLayout
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
@@ -44,6 +46,7 @@ class MiPerfilActivity : AppCompatActivity() {
     private val PATH_PROFILE = "profile"
     private val MY_PHOTO_AUTH = "my_photo_auth"
 
+    var banderaBtnIniciarSesion = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,6 +70,34 @@ class MiPerfilActivity : AppCompatActivity() {
             startActivityForResult(intent, RC_FROM_GALLERY)
         })
 
+        mtcContratarMiPerfil.setOnClickListener {
+            val intento = Intent(this, ContratacionesActivity::class.java)
+            startActivity(intento)
+        }
+
+        mtcExperienciaMiPerfil.setOnClickListener {
+            val intento = Intent(this, AddNuevasExperienciasActivity::class.java)
+            startActivity(intento)
+        }
+
+        mtcMisDatosMiPerfil.setOnClickListener {
+
+        }
+
+        mtcMisDatosMiPerfil.setOnClickListener {
+
+        }
+
+        mtcComunicadosMiPerfil.setOnClickListener {
+
+        }
+
+        mtcBuzonMiPerfil.setOnClickListener {
+            val intento = Intent(this, BuzonActivity::class.java)
+            startActivity(intento)
+        }
+
+
 
         /*adapter = ProviderAdapter(ArrayList<E>())
         rvMiPerfil.setLayoutManager(LinearLayoutManager(this))
@@ -86,9 +117,15 @@ class MiPerfilActivity : AppCompatActivity() {
                 /*onSetDataUser(user.getDisplayName(), user.getEmail(),
                                user.getProviderData().get(0) != null ?
                                         user.getProviderData().get(0).getProviderId() : PROVEEDOR_DESCONOCIDO);*/
-                Toast.makeText(this, "!=null",Toast.LENGTH_LONG).show()
+                //Toast.makeText(this, "!=null",Toast.LENGTH_LONG).show()
                 onSetDataUser(user.displayName, user.email, user.providerData)
+
                 btnIniciarSesion.isEnabled = false
+                btnIniciarSesion.visibility = View.INVISIBLE
+
+                gridLayout.visibility = View.VISIBLE
+
+                banderaBtnIniciarSesion = false
                 Log.e("userphotoUrl","user.photoUrl::::" + user.photoUrl)
                 if(user.photoUrl != null){
                     loadImage(user.photoUrl)
@@ -97,6 +134,9 @@ class MiPerfilActivity : AppCompatActivity() {
             } else {
 
                 btnIniciarSesion.isEnabled = true
+                btnIniciarSesion.visibility = View.VISIBLE
+                banderaBtnIniciarSesion = true
+                gridLayout.visibility = View.INVISIBLE
                 /* onSignedOutCleanup()
                  Toast.makeText(this, "=null",Toast.LENGTH_LONG).show()
                  *//*val facebookIdp: AuthUI.IdpConfig = AuthUI.IdpConfig.FacebookBuilder()
@@ -376,6 +416,8 @@ class MiPerfilActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val menuInflater = menuInflater
         menuInflater.inflate(R.menu.main_menu, menu)
+        //menu?.getItem(0)?.setEnabled(banderaBtnIniciarSesion)
+        //menu?.getItem(1)?.setEnabled(banderaBtnIniciarSesion)
         return super.onCreateOptionsMenu(menu)
     }
 

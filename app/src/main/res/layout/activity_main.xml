@@ -18,9 +18,10 @@
             android:layout_height="wrap_content"
             android:text="Inflables Feroz"
             android:textColor="@color/color_on_secondary"
-            android:textAlignment="inherit"
+            android:textAlignment="center"
             android:textStyle="bold"
             android:textSize="32dp"
+            android:layout_marginTop="@dimen/padding_default_16"
             android:layout_marginStart="@dimen/padding_default_16"
             app:layout_constraintTop_toTopOf="parent"
 
@@ -31,11 +32,25 @@
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/common_padding_min"
+            android:layout_marginBottom="@dimen/common_padding_min_8"
             android:layout_marginStart="@dimen/padding_default_16"
             android:layout_marginEnd="@dimen/padding_default_16"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloPrincipal"
             />
+        <!--<org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:id="@+id/carouselInicial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/item_padding_32"
+            android:layout_marginStart="@dimen/item_padding_32"
+            android:layout_marginEnd="@dimen/item_padding_32"
+            android:layout_marginBottom="@dimen/padding_default_16"
+            app:carouselType="SHOWCASE"
+            app:autoPlay="true"
+            app:autoPlayDelay="3000"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloPrincipal"
+            />-->
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,7 +73,7 @@
                 android:id="@+id/opcionInflables"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min_8"
                 android:layout_marginStart="@dimen/padding_default_16"
                 android:layout_marginEnd="@dimen/padding_default_16"
                 android:background="@drawable/colores_gradientes_sea"
@@ -69,16 +84,29 @@
                     android:id="@+id/imgFotoMenuInflables"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:layout_marginTop="@dimen/common_padding_min_8"
+                    android:layout_marginStart="@dimen/common_padding_min_8"
+                    android:layout_marginEnd="@dimen/common_padding_min_8"
+                    android:layout_marginBottom="@dimen/common_padding_min_8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     />
-
-
+<!--
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/imgFotoGifMenuInflables"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="@dimen/item_padding_32"
+                    android:layout_marginStart="@dimen/common_padding_min"
+                    android:layout_marginEnd="@dimen/common_padding_min"
+                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/loading"
+                    />-->
 
 
                 <TextView
@@ -125,10 +153,10 @@
                     android:id="@+id/imgFotoMenuContactos"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:layout_marginTop="@dimen/common_padding_min_8"
+                    android:layout_marginStart="@dimen/common_padding_min_8"
+                    android:layout_marginEnd="@dimen/common_padding_min_8"
+                    android:layout_marginBottom="@dimen/common_padding_min_8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -162,7 +190,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!--<androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/opcionContrataciones"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -214,7 +242,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/opcionUbicanos"
                 android:layout_width="match_parent"
@@ -230,10 +258,10 @@
                     android:id="@+id/imgFotoMenuUbicanos"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:layout_marginTop="@dimen/common_padding_min_8"
+                    android:layout_marginStart="@dimen/common_padding_min_8"
+                    android:layout_marginEnd="@dimen/common_padding_min_8"
+                    android:layout_marginBottom="@dimen/common_padding_min_8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -282,10 +310,10 @@
                     android:id="@+id/imgFotoMenuExperiencias"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:layout_marginTop="@dimen/common_padding_min_8"
+                    android:layout_marginStart="@dimen/common_padding_min_8"
+                    android:layout_marginEnd="@dimen/common_padding_min_8"
+                    android:layout_marginBottom="@dimen/common_padding_min_8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -320,7 +348,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!--<androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/opcionBuzon"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -372,7 +400,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
+-->
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -390,10 +418,10 @@
                     android:id="@+id/imgFotoMenuMiPerfil"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:layout_marginTop="@dimen/common_padding_min_8"
+                    android:layout_marginStart="@dimen/common_padding_min_8"
+                    android:layout_marginEnd="@dimen/common_padding_min_8"
+                    android:layout_marginBottom="@dimen/common_padding_min_8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -443,10 +471,10 @@
                     android:id="@+id/imgFotoMenuAdministrar"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_marginTop="@dimen/common_padding_min"
-                    android:layout_marginStart="@dimen/common_padding_min"
-                    android:layout_marginEnd="@dimen/common_padding_min"
-                    android:layout_marginBottom="@dimen/common_padding_min"
+                    android:layout_marginTop="@dimen/common_padding_min_8"
+                    android:layout_marginStart="@dimen/common_padding_min_8"
+                    android:layout_marginEnd="@dimen/common_padding_min_8"
+                    android:layout_marginBottom="@dimen/common_padding_min_8"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"

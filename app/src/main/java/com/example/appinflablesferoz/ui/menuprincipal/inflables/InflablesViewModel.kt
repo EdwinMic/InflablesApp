@@ -11,12 +11,13 @@ class InflablesViewModel: ViewModel() {
     private val repo = Repo()
 
     //fun fetchUserData(context:Context):LiveData<MutableList<Usuario>> {
-    fun fetchUserData():LiveData<MutableList<Inflables>> {
-        val mutableData = MutableLiveData<MutableList<Inflables>>()
-        repo.retornarRelacionTablas().observeForever { userList ->
-            mutableData.value = userList
+
+    fun getDatosInflables():LiveData<MutableList<Inflables>> {
+        val mutableDataInflables = MutableLiveData<MutableList<Inflables>>()
+        repo.retornarDatosInflables().observeForever { userList ->
+            mutableDataInflables.value = userList
         }
-        return mutableData
+        return mutableDataInflables
     }
 
 }

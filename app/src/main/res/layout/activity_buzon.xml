@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/containerBuzon"
-    tools:context=".ui.menuprincipal.buzon.BuzonActivity">
+    tools:context=".ui.menuprincipal.miperfil.buzon.BuzonActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarBuzon"
@@ -149,8 +149,8 @@
         android:gravity="center"
         android:layout_gravity="bottom|end"
         android:text="@string/txt_field_guaardar"
-        android:layout_marginEnd="@dimen/common_padding_min"
-        android:layout_marginBottom="@dimen/common_padding_min"
+        android:layout_marginEnd="@dimen/common_padding_min_8"
+        android:layout_marginBottom="@dimen/common_padding_min_8"
         android:src="@drawable/ic_cloud"
         />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

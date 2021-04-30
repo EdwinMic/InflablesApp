@@ -1,19 +1,13 @@
 package com.example.appinflablesferoz.ui.menuprincipal.administrar.menu.administrarexperiencias
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appinflablesferoz.R
-import com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasAdapter
-import com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.NuestrasExperienciasViewModel
-import com.example.appinflablesferoz.ui.menuprincipal.nuestrasexperiencias.addnuevasexperiencias.AddNuevasExperienciasActivity
 import kotlinx.android.synthetic.main.activity_administrar_experiencias.*
-import kotlinx.android.synthetic.main.activity_nuestras_experiencias.*
 import kotlinx.android.synthetic.main.activity_nuestras_experiencias.toolbar
 
 class AdministrarExperienciasActivity : AppCompatActivity() {

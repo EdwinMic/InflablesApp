@@ -1,4 +1,4 @@
-package com.example.appinflablesferoz.ui.menuprincipal.contrataciones
+package com.example.appinflablesferoz.ui.menuprincipal.miperfil.contrataciones
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,7 +15,7 @@ class ContratacionesActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.title = "Contrataciones"
+            actionBar.title = "Contratar"
         }
     }
 

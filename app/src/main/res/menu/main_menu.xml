@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:MultiLogin="http://schemas.android.com/tools">
 
+
+    <item
+        android:id="@+id/action_sing_in"
+        android:title="@string/txt_field_iniciar_sesion"
+        MultiLogin:ShowAsAction="never"
+        />
     <item
         android:id="@+id/action_sing_out"
         android:title="@string/txt_field_cerrar_sesion"
