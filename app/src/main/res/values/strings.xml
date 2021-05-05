@@ -37,4 +37,9 @@
     <string name="txt_field_iniciar_sesion">Iniciar Sesion</string>
     <string name="txt_field_telefono">Telefono</string>
     <string name="txt_field_buzon">Buzon</string>
+    <string name="txt_field_menu_add_telefono">Telefono</string>
+    <string name="txt_field_menu_add_colonia">Colonia</string>
+    <string name="txt_field_menu_add_direccion">Direccion</string>
+    <string name="txt_field_menu_add_correo">Correo</string>
+    <string name="txt_field_menu_add_referencias">Referencias</string>
 </resources>

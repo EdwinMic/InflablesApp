@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerAddContrato"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.menuprincipal.miperfil.contrataciones.ContratacionesActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -23,4 +26,218 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/item_padding_32"
+        android:layout_marginStart="@dimen/padding_default_16"
+        android:layout_marginEnd="@dimen/padding_default_16"
+        android:layout_marginBottom="@dimen/padding_default_16"
+        >
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilListAddContratoInflable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_field_menu_inflables"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                    style="@style/MyStyleAutocomplete"
+                    >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/actvListAddContratoInflable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddContratoNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                    style="@style/MyTheme.AddData.TextInputLayout"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddContratoNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_field_menu_add_nombre"
+                        android:enabled="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:nextFocusForward="@id/etAddContratoCorreo"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddContratoCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                    style="@style/MyTheme.AddData.TextInputLayout"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddContratoCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_field_menu_add_correo"
+                        android:enabled="true"
+                        android:inputType="textEmailAddress"
+                        android:imeOptions="actionNext"
+                        android:nextFocusForward="@id/etAddContratoTelefono"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddContratoTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                    style="@style/MyTheme.AddData.TextInputLayout"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddContratoTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_field_menu_add_telefono"
+                        android:enabled="true"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        android:nextFocusForward="@id/etAddContratoColonia"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddContratoColonia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                    style="@style/MyTheme.AddData.TextInputLayout"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddContratoColonia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txt_field_menu_add_colonia"
+                        android:enabled="true"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:nextFocusForward="@id/etAddContratoReferencias"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddContratoReferencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                    style="@style/MyTheme.AddData.TextInputLayout"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddContratoReferencias"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:hint="@string/txt_field_menu_add_referencias"
+                        android:enabled="true"
+                        android:inputType="textMultiLine"
+                        android:imeOptions="actionNext"
+                        android:nextFocusForward="@id/etAddContratoDireccion"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddContratoDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    app:startIconDrawable="@drawable/ic_flecha_siguiente"
+                    style="@style/MyTheme.AddData.TextInputLayout"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddContratoDireccion"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:hint="@string/txt_field_menu_add_direccion"
+                        android:enabled="true"
+                        android:inputType="textMultiLine"
+                        android:imeOptions="actionNone"
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mtbtnAddContratoBuscarDir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buscar en mapa"
+                    android:backgroundTint="@color/colorAccent"
+                    android:enabled="true"
+                    android:textColor="@color/cardview_light_background"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    android:layout_marginStart="@dimen/padding_default_16"
+                    android:layout_marginEnd="@dimen/padding_default_16"
+                    app:cornerRadius="10dp"
+                    app:icon="@drawable/ic_mapa"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mtbtnAddContratoGuardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_field_guaardar"
+                    android:backgroundTint="@color/colorAccent"
+                    android:enabled="true"
+                    android:textColor="@color/cardview_light_background"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    android:layout_marginStart="@dimen/padding_default_16"
+                    android:layout_marginEnd="@dimen/padding_default_16"
+                    app:cornerRadius="10dp"
+                    app:icon="@drawable/ic_cloud"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Nota: Si el mapa no muestra tu ubicacion correcta dejanos una alguna referencia que nos ayude a llegar a tu ubicacion."
+                    android:textColor="@color/color_error"
+                    android:layout_marginTop="@dimen/padding_default_16"
+                    android:layout_marginStart="@dimen/padding_default_16"
+                    android:layout_marginEnd="@dimen/padding_default_16"
+                    android:layout_marginBottom="@dimen/padding_default_16"
+                    />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
